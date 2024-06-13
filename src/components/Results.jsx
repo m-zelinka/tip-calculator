@@ -9,20 +9,20 @@ function Results() {
   } = useFormContext();
   const { bill, tip, peopleCount } = watch();
 
-  const tipAmount = isValid ? (bill * tip) / peopleCount : 0;
-  const total = isValid ? bill / peopleCount + tipAmount : 0;
+  const tipPerPerson = isValid ? (bill * tip) / peopleCount : 0;
+  const totalPerPerson = isValid ? bill / peopleCount + tipPerPerson : 0;
 
   return (
     <dl className="space-y-6">
       <div>
-        <dt className="text-sm/6 font-medium text-gray-600">Tip Amount</dt>
+        <dt className="text-sm/6 font-medium text-gray-600">Tip</dt>
         <dd
           className={clsx(
             "mt-2 flex items-baseline gap-x-2 text-4xl font-semibold tracking-tight",
-            tipAmount === 0 ? "text-gray-500" : "text-indigo-600",
+            tipPerPerson === 0 ? "text-gray-500" : "text-indigo-600",
           )}
         >
-          {formatCurrency(tipAmount)}
+          {formatCurrency(tipPerPerson)}
           <span className="text-sm text-gray-500">/ person</span>
         </dd>
       </div>
@@ -31,10 +31,10 @@ function Results() {
         <dd
           className={clsx(
             "mt-2 flex items-baseline gap-x-2 text-4xl font-semibold tracking-tight",
-            total === 0 ? "text-gray-500" : "text-indigo-600",
+            totalPerPerson === 0 ? "text-gray-500" : "text-indigo-600",
           )}
         >
-          {formatCurrency(total)}
+          {formatCurrency(totalPerPerson)}
           <span className="text-sm text-gray-500">/ person</span>
         </dd>
       </div>
