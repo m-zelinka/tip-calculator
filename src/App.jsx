@@ -1,10 +1,19 @@
+import { useForm } from "react-hook-form";
 import Form from "./components/Form";
 import ResetButton from "./components/ResetButton";
 import Results from "./components/Results";
+import { tipOptions } from "./utils";
+
+const defaultValues = { bill: "", tip: tipOptions[3].value, peopleCount: "" };
 
 function TipCalculator() {
+  const methods = useForm({
+    mode: "onChange",
+    defaultValues,
+  });
+
   function handleReset() {
-    // TODO
+    methods.reset(defaultValues);
   }
 
   return (
