@@ -1,9 +1,16 @@
 import clsx from "clsx";
+import { useFormContext } from "react-hook-form";
 import { formatCurrency } from "../utils";
 
 function Results() {
-  const tipAmount = 0;
-  const total = 0;
+  const {
+    watch,
+    formState: { isValid },
+  } = useFormContext();
+  const { bill, tip, peopleCount } = watch();
+
+  const tipAmount = isValid ? (bill * tip) / peopleCount : 0;
+  const total = isValid ? bill / peopleCount + tipAmount : 0;
 
   return (
     <dl className="space-y-6">

@@ -1,7 +1,13 @@
 import { UsersIcon } from "@heroicons/react/20/solid";
+import { useFormContext } from "react-hook-form";
 import { tipOptions } from "../utils";
 
 function Form() {
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext();
+
   return (
     <form>
       <div className="space-y-6">
@@ -25,13 +31,13 @@ function Form() {
               step={0.01}
               className="block w-full rounded-md border-0 py-1.5 pl-7 pr-12 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 aria-[invalid]:text-red-900 aria-[invalid]:ring-red-300 aria-[invalid]:placeholder:text-red-300 aria-[invalid]:focus:ring-red-500 sm:text-sm/6"
               placeholder="0.00"
-              // aria-invalid={errors.bill ? true : undefined}
+              aria-invalid={errors.bill ? true : undefined}
               aria-describedby="bill-error"
-              // {...register("bill", {
-              //   min: { value: 0.01, message: "Must be greater than 0" },
-              //   required: { value: true, message: "Required" },
-              //   valueAsNumber: true,
-              // })}
+              {...register("bill", {
+                min: { value: 0.01, message: "Must be greater than 0" },
+                required: { value: true, message: "Required" },
+                valueAsNumber: true,
+              })}
             />
             <div
               className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3"
@@ -42,11 +48,11 @@ function Form() {
               </span>
             </div>
           </div>
-          {/* {errors.bill ? (
-        <p id="bill-error" className="mt-2 text-sm text-red-600">
-          {errors.bill.message?.toString()}
-        </p>
-      ) : null} */}
+          {errors.bill ? (
+            <p id="bill-error" className="mt-2 text-sm text-red-600">
+              {errors.bill.message?.toString()}
+            </p>
+          ) : null}
         </div>
         <div>
           <label
@@ -59,12 +65,12 @@ function Form() {
             <select
               id="tip"
               className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 aria-[invalid]:text-red-900 aria-[invalid]:ring-red-300 aria-[invalid]:placeholder:text-red-300 aria-[invalid]:focus:ring-red-500 sm:text-sm/6"
-              // aria-invalid={errors.tip ? true : undefined}
+              aria-invalid={errors.tip ? true : undefined}
               aria-describedby="tip-error"
-              // {...register("tip", {
-              //   required: { value: true, message: "Required" },
-              //   valueAsNumber: true,
-              // })}
+              {...register("tip", {
+                required: { value: true, message: "Required" },
+                valueAsNumber: true,
+              })}
             >
               {tipOptions.map((option) => (
                 <option key={option.value} value={option.value}>
@@ -73,11 +79,11 @@ function Form() {
               ))}
             </select>
           </div>
-          {/* {errors.tip ? (
+          {errors.tip ? (
             <p id="tip-error" className="mt-2 text-sm text-red-600">
               {errors.tip.message?.toString()}
             </p>
-          ) : null} */}
+          ) : null}
         </div>
         <div>
           <label
@@ -97,21 +103,21 @@ function Form() {
               type="number"
               id="peopleCount"
               className="block w-full rounded-md border-0 py-1.5 pl-10 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 aria-[invalid]:text-red-900 aria-[invalid]:ring-red-300 aria-[invalid]:placeholder:text-red-300 aria-[invalid]:focus:ring-red-500 sm:text-sm/6"
-              // aria-invalid={errors.peopleCount ? true : undefined}
+              aria-invalid={errors.peopleCount ? true : undefined}
               aria-describedby="peopleCount-error"
               placeholder="0"
-              // {...register("peopleCount", {
-              //   min: { value: 1, message: "Must be greater than 0" },
-              //   required: { value: true, message: "Required" },
-              //   valueAsNumber: true,
-              // })}
+              {...register("peopleCount", {
+                min: { value: 1, message: "Must be greater than 0" },
+                required: { value: true, message: "Required" },
+                valueAsNumber: true,
+              })}
             />
           </div>
-          {/* {errors.peopleCount ? (
+          {errors.peopleCount ? (
             <p id="peopleCount-error" className="mt-2 text-sm text-red-600">
               {errors.peopleCount.message?.toString()}
             </p>
-          ) : null} */}
+          ) : null}
         </div>
       </div>
     </form>
