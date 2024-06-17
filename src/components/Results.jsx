@@ -19,7 +19,7 @@ function Results() {
         <dd
           className={clsx(
             "mt-2 flex items-baseline gap-x-2 text-4xl font-semibold tracking-tight",
-            tipPerPerson === 0 ? "text-gray-500" : "text-indigo-600",
+            tipPerPerson === 0 ? "text-gray-500" : "text-emerald-600",
           )}
         >
           {formatCurrency(tipPerPerson)}
@@ -31,7 +31,7 @@ function Results() {
         <dd
           className={clsx(
             "mt-2 flex items-baseline gap-x-2 text-4xl font-semibold tracking-tight",
-            totalPerPerson === 0 ? "text-gray-500" : "text-indigo-600",
+            totalPerPerson === 0 ? "text-gray-500" : "text-emerald-600",
           )}
         >
           {formatCurrency(totalPerPerson)}

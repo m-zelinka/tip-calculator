@@ -29,7 +29,7 @@ function Form() {
               type="number"
               id="bill"
               step={0.01}
-              className="block w-full rounded-md border-0 py-1.5 pl-7 pr-12 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 aria-[invalid]:text-red-900 aria-[invalid]:ring-red-300 aria-[invalid]:placeholder:text-red-300 aria-[invalid]:focus:ring-red-500 sm:text-sm/6"
+              className="block w-full rounded-md border-0 py-1.5 pl-7 pr-12 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-emerald-600 aria-[invalid]:text-red-900 aria-[invalid]:ring-red-300 aria-[invalid]:placeholder:text-red-300 aria-[invalid]:focus:ring-red-500 sm:text-sm/6"
               placeholder="0.00"
               aria-invalid={errors.bill ? true : undefined}
               aria-describedby="bill-error"
@@ -64,7 +64,7 @@ function Form() {
           <div className="mt-2">
             <select
               id="tip"
-              className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 aria-[invalid]:text-red-900 aria-[invalid]:ring-red-300 aria-[invalid]:placeholder:text-red-300 aria-[invalid]:focus:ring-red-500 sm:text-sm/6"
+              className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-emerald-600 aria-[invalid]:text-red-900 aria-[invalid]:ring-red-300 aria-[invalid]:placeholder:text-red-300 aria-[invalid]:focus:ring-red-500 sm:text-sm/6"
               aria-invalid={errors.tip ? true : undefined}
               aria-describedby="tip-error"
               {...register("tip", {
@@ -102,7 +102,7 @@ function Form() {
             <input
               type="number"
               id="peopleCount"
-              className="block w-full rounded-md border-0 py-1.5 pl-10 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 aria-[invalid]:text-red-900 aria-[invalid]:ring-red-300 aria-[invalid]:placeholder:text-red-300 aria-[invalid]:focus:ring-red-500 sm:text-sm/6"
+              className="block w-full rounded-md border-0 py-1.5 pl-10 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-emerald-600 aria-[invalid]:text-red-900 aria-[invalid]:ring-red-300 aria-[invalid]:placeholder:text-red-300 aria-[invalid]:focus:ring-red-500 sm:text-sm/6"
               aria-invalid={errors.peopleCount ? true : undefined}
               aria-describedby="peopleCount-error"
               placeholder="0"
